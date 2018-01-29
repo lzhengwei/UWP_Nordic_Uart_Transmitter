@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="1168">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left" Width="1166">
+        <Button x:ConnectionId='1' Content="Scanning BLE &#xD;&#xA;Devices" HorizontalAlignment="Left" Height="86" Margin="43,300,0,0" VerticalAlignment="Top" Width="122"                     />
+        <ListView x:ConnectionId='2' x:Name="listview1" HorizontalAlignment="Left" Height="599" Margin="224,78,0,0" VerticalAlignment="Top" Width="397" BorderThickness="0" IsSynchronizedWithCurrentItem="False" IsItemClickEnabled="True"                                                                               BorderBrush="Black" Background="#FFF5F6F7">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" 
+                           Margin="20,0,20,8"
+                           FontSize="24" 
+                           FontStyle="Normal" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF12195F" />
+                        <TextBlock Margin="20,0,20,8"
+                           FontSize="16" 
+                           Opacity="0.8" 
+                           Foreground="DarkGray">
+                           <Run Text="Address:"/>
+                           <Run Text="{Binding Address}"/>
+                        </TextBlock>
+                        <TextBlock Margin="20,0,20,8"
+                           FontSize="12" 
+                           Opacity="0.8" 
+                           Foreground="Gray">
+                           <Run Text="Strength:"/>                           
+                           <Run Text="{Binding SignalStrength}"/>
+                           <Run Text=" dBm"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:ConnectionId='3' x:Name="listview_uuid" HorizontalAlignment="Left" Height="599" Margin="692,78,0,0" VerticalAlignment="Top" Width="446"                                                                                       Background="{ThemeResource AppBarBorderThemeBrush}" BorderBrush="{ThemeResource AppBarBackgroundThemeBrush}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                        <TextBlock  
+                           Margin="20,0,20,8"
+                           FontSize="16" 
+                           FontStyle="Normal" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF1D1E25">
+                           <Run Text="UUID :"/>
+                           <Run Text="{Binding UUID}"/>
+                        </TextBlock>
+                        <TextBlock Margin="20,0,20,8"
+                           FontSize="12" 
+                           Opacity="0.8" 
+                           Foreground="DarkGray">
+                           <Run Text="Properties :"/>
+                           <Run Text="{Binding Properties}"/>
+                    </TextBlock>
+
+                </StackPanel>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+

@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left" Width="1280">
+        <Button x:ConnectionId='1' Content="Scanning BLE &#xD;&#xA;Devices" HorizontalAlignment="Left" Height="86" Margin="27,78,0,0" VerticalAlignment="Top" Width="122"                     />
+        <TextBox x:ConnectionId='2' x:Name="textbox" HorizontalAlignment="Left" Height="599" Margin="652,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="527" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+        <Button x:ConnectionId='3' x:Name="B2" Content="Show Message&#xA;" HorizontalAlignment="Left" Height="86" Margin="27,323,0,0" VerticalAlignment="Top" Width="122"                      />
+        <Button x:ConnectionId='4' x:Name="Uart_Button" Content="開始或暫停" HorizontalAlignment="Left" Height="86" Margin="27,591,0,0" VerticalAlignment="Top" Width="122"                          />
+        <ListView x:ConnectionId='5' x:Name="listview1" HorizontalAlignment="Left" Height="599" Margin="224,78,0,0" VerticalAlignment="Top" Width="397" BorderThickness="0" IsSynchronizedWithCurrentItem="False" IsItemClickEnabled="True"                                                                              >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" 
+                           Margin="20,0,20,8"
+                           FontSize="24" 
+                           FontStyle="Normal" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF12195F" />
+                        <TextBlock Margin="20,0,20,8"
+                           FontSize="16" 
+                           Opacity="0.8" 
+                           Foreground="DarkGray">
+                           <Run Text="Address:"/>
+                           <Run Text="{Binding Address}"/>
+                        </TextBlock>
+                        <TextBlock Margin="20,0,20,8"
+                           FontSize="12" 
+                           Opacity="0.8" 
+                           Foreground="Gray">
+                           <Run Text="Strength:"/>                           
+                           <Run Text="{Binding SignalStrength}"/>
+                           <Run Text=" dBm"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:ConnectionId='6' x:Name="Uart_Button_send" Content="Send Text to &#xD;&#xA;Devices" HorizontalAlignment="Left" Height="86" Margin="27,199,0,0" VerticalAlignment="Top" Width="122"                               />
+        <Button x:ConnectionId='7' Content="Clear" HorizontalAlignment="Left" Margin="1114,678,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.223,0.516" Width="65"                       />
+
+    </Grid>
+</Page>
+
