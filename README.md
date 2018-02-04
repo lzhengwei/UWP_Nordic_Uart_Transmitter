@@ -25,9 +25,9 @@ LSM9DS、LIS3DH and Micro SD card connect to Nrf51822 through SPI protcol.
 
 # Connect Step
 
-First, click Button name as **Scanning BLE Devices**. Then there will list Ble device at listview right at button.
+**First**, click Button name as **Scanning BLE Devices**. Then there will list Ble device at listview right at button.
 
-Second, click listview item which you want to connect. If connect successful, it will show some text contain "connect succcess".
+**Second**, click listview item which you want to connect. If connect successful, it will show some text contain "connect succcess".
 
 If connect fail, Make sure the ble device you want connect is pairing. You could check this on your bluetooth setting board. 
 
