@@ -46,7 +46,7 @@ The program will always scanning when executing. If there find ble device, It wi
 In that function I edit it to below code.
 
 ***BleWatvher_Received***
-```
+```c#
 if (args.Advertisement.LocalName != "" && !listOfBledeviceName.Contains(args.BluetoothAddress + "")) //check if there not exist same address
 {
     address.Add(args.Advertisement.LocalName);
@@ -64,7 +64,7 @@ if (args.Advertisement.LocalName != "" && !listOfBledeviceName.Contains(args.Blu
 When click item on listview it will execute **ConnectDevice** function.
 
 ***ConnectDevice***
-```
+```c#
 bleDevice = await BluetoothLEDevice.FromBluetoothAddressAsync(address); //connect ble device through address
 
 UARTservice = bleDevice.GetGattService(Guid.Parse(UUID_SERV)); //Get Ble device service from UUID_SERV, It is define at Nordic uuids. Nedd get service first, then get Characteristics under service.
@@ -80,14 +80,14 @@ textbox.Text = "Connect to " + bleDevice.Name + " Success\n" + "Address : " + ad
 ## Write/Read value from BLE uart
 ### Write
 
-```
+```c#
 var writeBuffer = CryptographicBuffer.ConvertStringToBinary(inputTextBox.Text,BinaryStringEncoding.Utf8); //Converte string to binary into writeBuffer
 var writeSuccessful = await WRITEcharacteristic.WriteValueAsync(writeBuffer); //parse value to WRITE characteristic. Then it will send value.
 ```
 
 ### Receive
 
-```
+```c#
 var reader = DataReader.FromBuffer(args.CharacteristicValue); //Get value from Characteristic
 byte[] input = new byte[reader.UnconsumedBufferLength];
 reader.ReadBytes(input); //Characteristic value to byte
