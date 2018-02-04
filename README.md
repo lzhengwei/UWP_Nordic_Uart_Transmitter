@@ -15,4 +15,10 @@ Divide into two project
 
 # Artitecture 
 
+Nrf51822(MDBT40) connect to android or windows10 UWP application send raw data through Bluetooth Low Energy(BLE).
+
+(I have another project for Nrf51822 program which develope on keilC5 name as Nrf51822 with LSM9DS)
+
+LSM9DS、LIS3DH and Micro SD card connect to Nrf51822 through SPI protcol.
+
 ![artitecture](https://github.com/lzhengwei/UWP_Nordic_Uart_Transmitter/blob/master/Structure.jpg)
